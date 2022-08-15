@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Inventario Final Calculator</title>
+</head>
+<body>
+    <div class="row">
+        <div style="position: relative; padding-bottom: 56px; margin-bottom: 10px" class="inicial col-sm-12 col-md-5 col-lg-5 border">
+            <div class="text-bg-dark p-md-2 rounded">INVENTARIO INICIAL</div>
+            <table class="table">
+                <thead>
+                  <tr>
+                
+                    <th scope="col">DESDE</th>
+                    <th scope="col">HASTA</th>
+                    
+                  </tr>
+                  
+                </thead>
+                <tbody>
+                  <tr >
+
+                    <td><input id="desde-inventario-inicial" type="number" class="form-control"></td>
+                    <td><input id="hasta-inventario-inicial" type="number" class="form-control"></td>
+                    
+                  </tr>
+
+              </table>
+              <div class="p-sm-2 p-md-2 col-8 text-bg-secondary" style="text-align: center; position:absolute; bottom:0; left: 0;" >TOTAL INICIAL</div>
+              <div id="pantalla-total-inicial" class="p-sm-2 p-md-2 col-4" style="position:absolute; bottom:0; right: 0;" >0</div>
+        </div>
+        <div style="position: relative; padding-bottom: 56px; margin-bottom: 10px" class="inicial col-sm-12 col-md-5 col-lg-5 border">
+            <div class="text-bg-dark p-md-2 rounded ">INVENTARIO FINAL</div>
+            <table class="table">
+                <thead>
+                  <tr>
+                
+                    <th scope="col">DESDE</th>
+                    <th scope="col">HASTA</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr >
+
+                    <td><input id="desde-inventario-final" disabled type="number" class="form-control"></td>
+                    <td><input id="hasta-inventario-final" disabled type="number" class="form-control"></td>
+                    
+                  </tr>
+
+                </tbody>
+                
+              </table>
+              <div class="p-sm-2 p-md-2 col-8 text-bg-secondary" style="text-align: center; position:absolute; bottom:0; left: 0;" >TOTAL FINAL</div>
+              <div id="pantalla-total-final" class="p-sm-2 p-md-2 col-4" style="position:absolute; bottom:0; right: 0;" >0</div>
+              
+             
+        </div>
+        <div class="inicial col-sm-12 col-md-2 col-lg-2 border">
+            <div class="text-bg-dark p-md-2 rounded ">IMPRESION BOLETERIA</div>
+            <table class="table">
+                <thead id="impresas">
+                  <tr>
+                
+                    <th scope="col">VENTAS</th>
+                    <th scope="col"><input value=0 type="number" class="form-control"></th>
+                    
+                  </tr>
+                  <tr>
+                
+                    <th scope="col">ONLINE</th>
+                    <th scope="col"><input value=0 type="number" class="form-control"></th>
+                    
+                  </tr>
+                  <tr>
+                
+                    <th scope="col">EMPRESARIO</th>
+                    <th scope="col"><input value=0 type="number" class="form-control"></th>
+                    
+                  </tr>
+                  <tr>
+                
+                    <th scope="col">CORTESIAS</th>
+                    <th scope="col"><input value=0 type="number" class="form-control"></th>
+                    
+                  </tr>
+                  <tr>
+                
+                    <th scope="col">ANULADAS</th>
+                    <th scope="col"><input value=0 type="number" class="form-control"></th>
+                    
+                  </tr>
+                  <tr>
+                
+                    <th scope="col">EN BLANCO</th>
+                    <th scope="col"><input value=0 type="number" class="form-control"></th>
+                    
+                  </tr>
+                  <tr>
+                
+                    <th scope="col">OTRAS</th>
+                    <th scope="col"><input value="0" type="number" class="form-control"></th>
+                    
+                  </tr>
+                  
+                </thead>
+                <tbody>
+                    <tr>
+                
+                        <th class="table-secondary">TOTAL</th>
+                        <th scope="col"><input disabled id="pantalla-total-impresas" value="0" type="number" class="form-control"></th>
+                        
+                      </tr>
+                </tbody>
+              </table>
+        </div>
+    </div> 
+    <script src="./js/calcular.js"></script>
+    <!--Boostrap Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
