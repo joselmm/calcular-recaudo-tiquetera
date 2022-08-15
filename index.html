@@ -32,7 +32,7 @@
 
               </table>
               <div class="p-sm-2 p-md-2 col-8 text-bg-secondary" style="text-align: center; position:absolute; bottom:0; left: 0;" >TOTAL INICIAL</div>
-              <div id="pantalla-total-inicial" class="p-sm-2 p-md-2 col-4" style="position:absolute; bottom:0; right: 0;" >0</div>
+              <div id="pantalla-total-inicial" class="p-sm-2 p-md-2 col-4" style="text-align: center; position:absolute; bottom:0; right: 0;" >0</div>
         </div>
         <div style="position: relative; padding-bottom: 56px; margin-bottom: 10px" class="inicial col-sm-12 col-md-5 col-lg-5 border">
             <div class="text-bg-dark p-md-2 rounded ">INVENTARIO FINAL</div>
@@ -57,7 +57,7 @@
                 
               </table>
               <div class="p-sm-2 p-md-2 col-8 text-bg-secondary" style="text-align: center; position:absolute; bottom:0; left: 0;" >TOTAL FINAL</div>
-              <div id="pantalla-total-final" class="p-sm-2 p-md-2 col-4" style="position:absolute; bottom:0; right: 0;" >0</div>
+              <div id="pantalla-total-final" class="p-sm-2 p-md-2 col-4" style="text-align: center; position:absolute; bottom:0; right: 0;" >0</div>
               
              
         </div>
@@ -113,14 +113,27 @@
                     <tr>
                 
                         <th class="table-secondary">TOTAL</th>
-                        <th scope="col"><input disabled id="pantalla-total-impresas" value="0" type="number" class="form-control"></th>
+                        <th  scope="col"><input style="text-align: center;" disabled id="pantalla-total-impresas" value="0" type="number" class="form-control"></th>
                         
                       </tr>
                 </tbody>
               </table>
         </div>
     </div> 
-    <div>HECHO POR JOSÉ SORACÁ GUEVARA, WA: 3148854055</div>
+    <footer class="footer justify-content-center text-center">
+      <div>Creado por José Soraca Guevara</div>
+      <div>Whatsapp: <a id="whatsapp" href="">Whatsapp</a></div>
+
+      <script>
+        let navegador = navigator.userAgent;
+        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+            document.getElementById("whatsapp").href="whatsapp://send/?phone=573148854055&text=Hola%20José,%20te%20hablo%20porque&amp;phone=573005965404"
+        } else {
+            document.getElementById("whatsapp").href="https://api.whatsapp.com/send?phone=573148854055&text=Hola%20Jos%C3%A9%2C%20te%20escribo%20porque"
+        }
+      </script>
+
+    </footer>
     <script src="./js/calcular.js"></script>
     <!--Boostrap Script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
