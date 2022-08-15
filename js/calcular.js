@@ -102,3 +102,4 @@ for (let elem = 0; elem < $headTablePrinted.children.length; elem++) {
 
 //
 //children[input].children[1].children[0].value
+
