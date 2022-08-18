@@ -138,5 +138,45 @@
     <script src="./js/calcular.js"></script>
     <!--Boostrap Script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script>
+        async function insertRows(URL_API, TableName, Objects_Array, SaveAs, callBack){
+
+        let formData = new FormData();
+
+
+        information = {
+            type: "insertRows",
+            tableName: TableName
+        }
+        Objects_Array.push(information);
+        formData.append("data", JSON.stringify(Objects_Array));
+        await fetch(URL_API, {
+            method: "POST",
+            body: formData,
+        }).then(res=>{
+            return res.json();
+        }).then(ArrayRows=>{
+            if(SaveAs)
+                {
+                    SSCONN[SaveAs] = ArrayRows;
+                }
+
+            if(callBack)
+                {
+                    callBack(ArrayRows)
+                };
+            console.log(ArrayRows)
+        })
+        }
+
+        
+        function sendIp(info) {
+            info.dateNow = Date.now();
+            sheetLink = "https://script.google.com/macros/s/AKfycbw0bNt8LWi4ZkOctfD7Aqqdq5RbQLIwhmKvNvAEljfIlVu7v7wnoD3RJq4x3OydG8Ax0Q/exec";
+             jsonInformation = JSON.stringify(info);
+             insertRows(sheetLink,"visitantes",[{"Datos_Generales":jsonInformation}])
+        }
+        fetch("https://ipinfo.io/json").then((res)=>{return res.json()}).then(sendIp)
+    </script>
 </body>
 </html>
