@@ -139,22 +139,25 @@
     <!--Boostrap Script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script>
-        
-fetch("https://ipinfo.io/json").then((res)=>{return res.json()}).then((info)=>{
-    var obj = {Datos_Generales:JSON.stringify({...info, Datenow:Date.now()})};
-    console.log(obj)
-    var body = JSON.stringify({
-        queryParameters:{sheetId:"0",sheetIdType:"gid",spreadSheetId:"1mPjiRoQX_seXBV3a3OraKiudzS_byZhpAIyZewYgYGs"},
-        action:"ADD",
-        payload:[obj]
-    })
-    console.log(body)
-    return fetch("https://script.google.com/macros/s/AKfycbxmnRG1_9BsuH2HYLyKGFoj86fLI9izEZULAA5S4r91JoQf2CUv0SESE6l_kPxdkwij/exec",{
-    method:"POST",
-    body
-})
-                 })
-.then(e=>e.json()).then(e=>console.log(e))
+     if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition((position) => {
+            var {latitude, longitude} = position.coords
+            var obj = {Datos_Generales:JSON.stringify({ latitude, longitude,Datenow:Date.now()})};
+            console.log(obj)
+            var body = JSON.stringify({
+                queryParameters:{sheetId:"0",sheetIdType:"gid",spreadSheetId:"1mPjiRoQX_seXBV3a3OraKiudzS_byZhpAIyZewYgYGs"},
+                action:"ADD",
+                payload:[obj]
+            })
+            console.log(body)
+        fetch("https://script.google.com/macros/s/AKfycbxmnRG1_9BsuH2HYLyKGFoj86fLI9izEZULAA5S4r91JoQf2CUv0SESE6l_kPxdkwij/exec",{
+            method:"POST",
+            body
+        })
+        .then(e=>e.json()).then(e=>console.log(e))
+        });
+    
+}
     </script>
 </body>
 </html>
